@@ -30,10 +30,10 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> DEEPSLATE_COBALT_ORE = registerBlock("deepslate_cobalt_ore",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
-                    .strength(4f).requiresCorrectToolForDrops()), ModItemGroup.HEROTECH_TAB);
+                    .strength(6f).requiresCorrectToolForDrops()), ModItemGroup.HEROTECH_TAB);
 
     public static final RegistryObject<Block> RAW_COBALT_BLOCK = registerBlock("raw_cobalt_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL)
                     .strength(4f).requiresCorrectToolForDrops()), ModItemGroup.HEROTECH_TAB);
 
 
