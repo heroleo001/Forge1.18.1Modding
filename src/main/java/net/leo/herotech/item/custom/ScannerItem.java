@@ -1,6 +1,7 @@
 package net.leo.herotech.item.custom;
 
 import net.leo.herotech.block.ModBlocks;
+import net.leo.herotech.util.ModTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.InteractionResult;
@@ -46,8 +47,6 @@ public class ScannerItem extends Item {
     }
 
     private boolean isValuable(Block block){
-        return block == Blocks.DIAMOND_ORE || block == Blocks.DEEPSLATE_DIAMOND_ORE ||
-                block == Blocks.IRON_ORE || block == Blocks.DEEPSLATE_IRON_ORE ||
-                block == ModBlocks.COBALT_ORE.get() || block == ModBlocks.DEEPSLATE_COBALT_ORE.get();
+        return ModTags.Blocks.SCANNER_VALUABLES.contains(block);
     }
 }
