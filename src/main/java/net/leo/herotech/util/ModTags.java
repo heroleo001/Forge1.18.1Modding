@@ -31,6 +31,7 @@ public class ModTags {
 
     public static class Blocks{
         public static final Tags.IOptionalNamedTag<Block> SCANNER_VALUABLES = tag("scanner_valuables");
+        public static final Tags.IOptionalNamedTag<Block> MINEABLE_WITH_DRILL = tag("mineable_with_drill");
 
 
         public static Tags.IOptionalNamedTag<Block> tag(String name){
