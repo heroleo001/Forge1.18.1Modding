@@ -7,8 +7,14 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
+import org.lwjgl.system.CallbackI;
 
 public class ModTags {
+    public static void register(){
+        Items.registerItemTags();
+        Blocks.registerBlockTags();
+    }
+
     public static class Items{
         public static final Tags.IOptionalNamedTag<Item> COBALT_INGOTS = forgeTag("ingots/cobalt");
         public static final Tags.IOptionalNamedTag<Item> COBALT_NUGGETS = forgeTag("nuggets/cobalt");
@@ -20,6 +26,7 @@ public class ModTags {
         public static Tags.IOptionalNamedTag<Item> forgeTag(String name){
             return ItemTags.createOptional(new ResourceLocation("forge", name));
         }
+        public static void registerItemTags(){}
     }
 
     public static class Blocks{
@@ -32,5 +39,6 @@ public class ModTags {
         public static Tags.IOptionalNamedTag<Block> forgeTag(String name){
             return BlockTags.createOptional(new ResourceLocation("forge", name));
         }
+        public static void registerBlockTags(){}
     }
 }

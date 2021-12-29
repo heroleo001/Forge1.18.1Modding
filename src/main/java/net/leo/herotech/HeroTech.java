@@ -2,7 +2,9 @@ package net.leo.herotech;
 
 import net.leo.herotech.block.ModBlocks;
 import net.leo.herotech.item.ModItems;
+import net.leo.herotech.util.ModTags;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.entity.FurnaceBlockEntity;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -24,6 +26,7 @@ public class HeroTech {
 
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);
+        ModTags.register();
 
         MinecraftForge.EVENT_BUS.register(this);
     }
