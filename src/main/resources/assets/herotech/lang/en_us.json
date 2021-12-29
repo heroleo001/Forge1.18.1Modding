@@ -4,6 +4,8 @@
   "item.herotech.raw_cobalt": "Raw Cobalt",
   "item.herotech.scanner": "Scanner",
   "item.herotech.drill": "Drill",
+  "item.herotech.diamond_drill": "Diamond Drill",
+  "item.herotech.advanced_diamond_drill": "Advanced Diamond Drill",
 
   "block.herotech.cobalt_block": "Cobalt Block",
   "block.herotech.deepslate_cobalt_ore": "Deepslate Cobalt Ore",

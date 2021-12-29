@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "herotech:item/advanced_diamond_drill"
+  }
+}
