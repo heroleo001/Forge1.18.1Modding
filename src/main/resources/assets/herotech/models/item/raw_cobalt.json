@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "herotech:item/raw_cobalt"
+  }
+}
