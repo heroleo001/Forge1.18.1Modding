@@ -2,11 +2,15 @@
   "item.herotech.cobalt_ingot": "Cobalt Ingot",
   "item.herotech.cobalt_nugget": "Cobalt Nugget",
   "item.herotech.raw_cobalt": "Raw Cobalt",
+  "item.herotech.scanner": "Scanner",
 
   "block.herotech.cobalt_block": "Cobalt Block",
   "block.herotech.deepslate_cobalt_ore": "Deepslate Cobalt Ore",
   "block.herotech.cobalt_ore": "Cobalt Ore",
   "block.herotech.raw_cobalt_block": "Raw Cobalt Block",
 
-  "itemGroup.herotech_tab": "HeroTech"
+  "itemGroup.herotech_tab": "HeroTech",
+
+  "item.herotech.scanner.found.true": "Found something valuable",
+  "item.herotech.scanner.found.false": "Nothing valuable here"
 }
