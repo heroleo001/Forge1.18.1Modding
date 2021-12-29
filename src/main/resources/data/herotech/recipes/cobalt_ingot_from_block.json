@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "herotech:cobalt_block"
+    }
+  ],
+  "result": {
+    "item": "herotech:cobalt_ingot",
+    "count": 9
+  }
+}
