@@ -1,6 +1,7 @@
 package net.leo.herotech.block;
 
 import net.leo.herotech.HeroTech;
+import net.leo.herotech.block.custom.SpeedBlock;
 import net.leo.herotech.item.ModItemGroup;
 import net.leo.herotech.item.ModItems;
 import net.minecraft.world.item.BlockItem;
@@ -34,6 +35,10 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> RAW_COBALT_BLOCK = registerBlock("raw_cobalt_block",
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL)
+                    .strength(4f).requiresCorrectToolForDrops()), ModItemGroup.HEROTECH_TAB);
+
+    public static final RegistryObject<Block> SPEED_BLOCK = registerBlock("speed_block",
+            () -> new SpeedBlock(BlockBehaviour.Properties.of(Material.METAL)
                     .strength(4f).requiresCorrectToolForDrops()), ModItemGroup.HEROTECH_TAB);
 
 
