@@ -31,7 +31,7 @@ public class ModItems {
                     pTarget.addEffect(new MobEffectInstance(MobEffects.LEVITATION, (60*20)));
                     return super.hurtEnemy(pStack, pTarget, pAttacker);
                 }
-            });
+    });
 
     public static final RegistryObject<Item> COBALT_NUGGET = ITEMS.register("cobalt_nugget",
             () -> new Item(new Item.Properties().tab(ModItemGroup.HEROTECH_TAB)));
