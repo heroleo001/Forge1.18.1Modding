@@ -1,6 +1,7 @@
 package net.leo.herotech.item;
 
 import net.leo.herotech.HeroTech;
+import net.leo.herotech.item.custom.BatteryItem;
 import net.leo.herotech.item.custom.DrillItem;
 import net.leo.herotech.item.custom.ModTiers;
 import net.leo.herotech.item.custom.ScannerItem;
@@ -53,6 +54,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> SCANNER = ITEMS.register("scanner",
             () -> new ScannerItem(new Item.Properties().tab(ModItemGroup.HEROTECH_TAB).durability(32)));
+
+    public static final RegistryObject<Item> BATTERY = ITEMS.register("battery",
+            () -> new BatteryItem(new Item.Properties().tab(ModItemGroup.HEROTECH_TAB).durability(BatteryItem.getMaxEnergy())));
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);
