@@ -1,0 +1,11 @@
+{
+  "type": "herotech:compressing",
+  "ingredients": [
+    {
+      "item": "minecraft:iron_ingot"
+    }
+  ],
+  "result": {
+    "item": "herotech:dense_iron_block"
+  }
+}

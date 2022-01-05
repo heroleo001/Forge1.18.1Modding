@@ -5,6 +5,7 @@ import net.leo.herotech.blockentity.ModBlockEntities;
 import net.leo.herotech.blockentity.screen.CompressorScreen;
 import net.leo.herotech.blockentity.screen.ModMenuTypes;
 import net.leo.herotech.item.ModItems;
+import net.leo.herotech.recipe.ModRecipes;
 import net.leo.herotech.util.ModTags;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.world.level.block.entity.FurnaceBlockEntity;
@@ -34,6 +35,7 @@ public class HeroTech {
 
         ModBlockEntities.register(eventBus);
         ModMenuTypes.register(eventBus);
+        ModRecipes.register(eventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
     }

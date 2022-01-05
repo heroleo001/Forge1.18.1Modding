@@ -6,9 +6,7 @@ import net.leo.herotech.blockentity.screen.slot.ModResultSlot;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ContainerLevelAccess;
-import net.minecraft.world.inventory.Slot;
+import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -18,16 +16,18 @@ import net.minecraftforge.items.SlotItemHandler;
 public class CompressorMenu extends AbstractContainerMenu {
     private final CompressorBlockEntity blockEntity;
     private final Level level;
+    private final ContainerData data;
 
     public CompressorMenu(int windowId, Inventory inv, FriendlyByteBuf extraData) {
-        this(windowId, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()));
+        this(windowId, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(4));
     }
 
-    public CompressorMenu(int windowId, Inventory inv, BlockEntity entity) {
+    public CompressorMenu(int windowId, Inventory inv, BlockEntity entity, ContainerData data) {
         super(ModMenuTypes.COMPRESSOR_MENU.get(), windowId);
         checkContainerSize(inv, 4);
         blockEntity = ((CompressorBlockEntity) entity);
         this.level = inv.player.level;
+        this.data = data;
 
         addPlayerInventory(inv);
         addPlayerHotbar(inv);
@@ -36,9 +36,33 @@ public class CompressorMenu extends AbstractContainerMenu {
             this.addSlot(new SlotItemHandler(handler, 0, 62, 35));
             this.addSlot(new ModResultSlot(handler, 1, 98, 35));
         });
+
+        addDataSlots(data);
     }
 
-    // BEGIN quickMove
+
+    public boolean isCrafting() {
+        return data.get(0) > 0;
+    }
+    public boolean hasEnergy() {
+        return data.get(2) > 0;
+    }
+    public int getScaledProgress() {
+        int progress = this.data.get(0);
+        int maxProgress = this.data.get(1);
+        int progressArrowSize = 12;
+
+        return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
+    }
+    public int getScaledEnergyProgress() {
+        int energy = this.data.get(2);
+        int maxEnergy = this.data.get(3);
+        int progressArrowSize = 13;
+
+        return maxEnergy != 0 && energy != 0 ? energy * progressArrowSize / maxEnergy : 0;
+    }
+
+    // BEGIN quickMoveStack
     private static final int HOTBAR_SLOT_COUNT = 9;
     private static final int PLAYER_INVENTORY_ROW_COUNT = 3;
     private static final int PLAYER_INVENTORY_COLUMN_COUNT = 9;
@@ -79,7 +103,7 @@ public class CompressorMenu extends AbstractContainerMenu {
         sourceSlot.onTake(playerIn, sourceStack);
         return copyOfSourceStack;
     }
-    // END quickMove
+    // END quickMoveStack
 
     @Override
     public boolean stillValid(Player pPlayer) {
@@ -90,14 +114,14 @@ public class CompressorMenu extends AbstractContainerMenu {
     private void addPlayerInventory(Inventory playerInventory) {
         for (int i = 0; i < 3; ++i) {
             for (int l = 0; l < 9; ++l) {
-                this.addSlot(new Slot(playerInventory, l + i * 9 + 9, 8 + l * 18, 84 + i * 18));
+                this.addSlot(new Slot(playerInventory, l + i * 9 + 9, 8 + l * 18, 86 + i * 18));
             }
         }
     }
 
     private void addPlayerHotbar(Inventory playerInventory) {
         for (int i = 0; i < 9; ++i) {
-            this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 142));
+            this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 144));
         }
     }
 }

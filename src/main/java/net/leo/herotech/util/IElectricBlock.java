@@ -1,14 +1,12 @@
 package net.leo.herotech.util;
 
-import net.minecraft.world.level.block.state.BlockState;
-
 public interface IElectricBlock {
     /**
      * get maximum energy storage of an Item or Machine
      * @return
      * int
      */
-    static int getMaxEnergy(){return 0;}
+    int getMaxEnergy();
 
     /**
      * gets a value of an advanced enum which determines the electric tier
@@ -32,5 +30,5 @@ public interface IElectricBlock {
      */
     int getStoredEnergy();
 
-    void charge(int amount, BlockState state);
+    void charge(int amount);
 }
