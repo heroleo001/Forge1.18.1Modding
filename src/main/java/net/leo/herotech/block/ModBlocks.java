@@ -8,6 +8,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -40,6 +41,10 @@ public class ModBlocks {
     public static final RegistryObject<Block> SPEED_BLOCK = registerBlock("speed_block",
             () -> new SpeedBlock(BlockBehaviour.Properties.of(Material.METAL)
                     .strength(4f).requiresCorrectToolForDrops()), ModItemGroup.HEROTECH_TAB);
+
+    public static final RegistryObject<Block> DENSE_IRON_BLOCK = registerBlock("dense_iron_block",
+            () -> new SpeedBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
+                    .strength(6f).requiresCorrectToolForDrops()), ModItemGroup.HEROTECH_TAB);
 
 
 
