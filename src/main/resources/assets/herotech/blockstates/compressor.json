@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "active=true": { "model": "herotech:block/compressor_active" },
+    "active=false": { "model": "herotech:block/compressor" }
+  }
+}

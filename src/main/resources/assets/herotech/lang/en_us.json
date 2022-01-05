@@ -14,6 +14,9 @@
   "block.herotech.cobalt_ore": "Cobalt Ore",
   "block.herotech.raw_cobalt_block": "Raw Cobalt Block",
   "block.herotech.speed_block": "Speed Block",
+  "block.herotech.dense_iron_block": "Dense Iron Block",
+
+  "block.herotech.compressor": "Compressor",
 
   "itemGroup.herotech_tab": "HeroTech",
 

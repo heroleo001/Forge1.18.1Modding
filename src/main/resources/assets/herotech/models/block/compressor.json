@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "side": "herotech:block/compressor_front",
+    "front": "herotech:block/compressor_front",
+    "top": "herotech:block/compressor_top",
+    "bottom": "herotech:block/compressor_bottom"
+  }
+}

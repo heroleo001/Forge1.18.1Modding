@@ -1,6 +1,7 @@
 package net.leo.herotech.block;
 
 import net.leo.herotech.HeroTech;
+import net.leo.herotech.block.custom.CompressorBlock;
 import net.leo.herotech.block.custom.SpeedBlock;
 import net.leo.herotech.item.ModItemGroup;
 import net.leo.herotech.item.ModItems;
@@ -43,8 +44,12 @@ public class ModBlocks {
                     .strength(4f).requiresCorrectToolForDrops()), ModItemGroup.HEROTECH_TAB);
 
     public static final RegistryObject<Block> DENSE_IRON_BLOCK = registerBlock("dense_iron_block",
-            () -> new SpeedBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
                     .strength(6f).requiresCorrectToolForDrops()), ModItemGroup.HEROTECH_TAB);
+
+    public static final RegistryObject<Block> COMPRESSOR = registerBlock("compressor",
+            () -> new CompressorBlock(BlockBehaviour.Properties.of(Material.METAL)
+                    .strength(4f).requiresCorrectToolForDrops()), ModItemGroup.HEROTECH_TAB);
 
 
 

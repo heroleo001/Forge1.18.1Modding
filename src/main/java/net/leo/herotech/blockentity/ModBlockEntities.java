@@ -13,6 +13,10 @@ public class ModBlockEntities {
             DeferredRegister.create(ForgeRegistries.BLOCK_ENTITIES, HeroTech.MOD_ID);
 
 
+    public static final RegistryObject<BlockEntityType<CompressorBlockEntity>> COMPRESSOR    =
+            BLOCK_ENTITIES.register("compressor", () ->
+                    BlockEntityType.Builder.of(CompressorBlockEntity::new,
+                            ModBlocks.COMPRESSOR.get()).build(null));
 
 
     public static void register(IEventBus eventBus){
